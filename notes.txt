@@ -1,0 +1,42 @@
+design notes
+
+=== STRUCTURAL STUFF ===
+
+element :: type.
+arg :: type.
+
+argTy :: type.
+
+eleTy :: type.
+base :: eleTy.
+(->) :: argTy => eleTy => eleTy.
+
+fun :: (arg => element) => element.
+app :: element => arg => element.
+
+(:) :: argTy => eleTy => o.
+
+(fun M : A -> B) ::= (...).
+(app M N : B) ::= (M : A->B) , (N : A).
+
+=== ARGUMENT TYPES ===
+
+point : argTy.
+float : argTy.
+vec : argTy.
+string : argTy.
+
+=== PRIMITIVE ELEMENTS ===
+
+circle : point -> float -> base.
+line : point -> point -> base.
+textbox : point -> point -> string -> base.
+
+=== ELEMENT OPERATIONS ===
+
+layer : base -> base.
+linear : time -> .
+
+=== BIG IMPORTANT OPERATIONS ===
+
+render :: (E : base) => () => o.
